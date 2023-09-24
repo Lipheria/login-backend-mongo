@@ -26,8 +26,6 @@ app.get("/register", (req, res) =>{
 })
 
 
-mongoose.connect("mongodb+srv://lipheria:samurott@cluster0.l5nstq6.mongodb.net/plantidb?retryWrites=true&w=majority")
-
 app.post("/login", (req, res) =>{
     console.log("Login API")
     const{loginuserName, loginPassword} = req.body;
