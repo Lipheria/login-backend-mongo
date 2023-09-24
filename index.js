@@ -2,6 +2,7 @@ const express = require("express")
 const mongoose = require('mongoose')
 const cors = require("cors")
 const userModel = require("./models/user")
+const url = "mongodb+srv://lipheria:<samurott>@cluster0.l5nstq6.mongodb.net/plantidb"
 
 const app = express()
 app.use(express.json())
@@ -25,7 +26,7 @@ app.get("/register", (req, res) =>{
     res.send("Hello Register API")
 })
 
-mongoose.connect("mongodb+srv://lipheria:samurott@cluster0.l5nstq6.mongodb.net/plantidb?retryWrites=true&w=majority")
+mongoose.connect(url)
 
 
 app.post("/login", (req, res) =>{
