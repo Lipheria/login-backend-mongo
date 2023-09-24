@@ -26,7 +26,7 @@ app.get("/register", (req, res) =>{
 })
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/plantidb")
+mongoose.connect("mongodb+srv://lipheria:<samurott>@cluster0.l5nstq6.mongodb.net/plantidb")
 
 app.post("/login", (req, res) =>{
     console.log("Login API")
