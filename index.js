@@ -17,6 +17,15 @@ app.get("/", (req, res) =>{
     res.send("Hello Cheese")
 })
 
+app.get("/login", (req, res) =>{
+    res.send("Hello Login API")
+})
+
+app.get("/register", (req, res) =>{
+    res.send("Hello Register API")
+})
+
+
 mongoose.connect("mongodb://127.0.0.1:27017/plantidb")
 
 app.post("/login", (req, res) =>{
