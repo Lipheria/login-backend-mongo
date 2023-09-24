@@ -20,6 +20,7 @@ app.get("/", (req, res) =>{
 mongoose.connect("mongodb://127.0.0.1:27017/plantidb")
 
 app.post("/login", (req, res) =>{
+    console.log("Login API")
     const{loginuserName, loginPassword} = req.body;
     userModel.findOne({userName:loginuserName})
     .then(user => {
@@ -36,6 +37,7 @@ app.post("/login", (req, res) =>{
 })
 
 app.post("/register", (req, res) => {
+    console.log("Register API")
     userModel.create(req.body)
     .then(user => res.json(user))
     .catch(err => res.json(err))
