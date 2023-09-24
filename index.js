@@ -23,6 +23,7 @@ app.get("/login", (req, res) =>{
 
 app.get("/register", (req, res) =>{
     res.send("Hello Register API")
+    res.send("Cheese")
 })
 
 
