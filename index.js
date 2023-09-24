@@ -5,7 +5,13 @@ const userModel = require("./models/user")
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://login-backend-mongo.vercel.app"],
+        methods: ["POST", "GET"],
+        crendentials: true
+    }
+))
 
 app.get("/", (req, res) =>{
     res.send("Hello Cheese")
