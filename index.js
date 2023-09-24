@@ -25,6 +25,8 @@ app.get("/register", (req, res) =>{
     res.send("Hello Register API")
 })
 
+mongoose.connect("mongodb+srv://lipheria:samurott@cluster0.l5nstq6.mongodb.net/plantidb?retryWrites=true&w=majority")
+
 
 app.post("/login", (req, res) =>{
     console.log("Login API")
