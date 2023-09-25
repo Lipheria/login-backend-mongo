@@ -2,7 +2,7 @@ const express = require("express")
 const mongoose = require('mongoose')
 const cors = require("cors")
 const userModel = require("./models/user")
-const url = "mongodb+srv://lipheria:samurott@cluster0.f24f5zm.mongodb.net/plantidb"
+const url = "mongodb+srv://lipheria:samurott@cluster0.bbpwnrj.mongodb.net/plantidb?retryWrites=true&w=majority"
 
 const app = express()
 app.use(express.json())
