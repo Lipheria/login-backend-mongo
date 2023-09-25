@@ -14,6 +14,17 @@ app.use(cors(
     }
 ))
 
+const connectDB = async () =>{
+    try{
+        await mongoose.connect(url)
+        console.log("Connected")
+    }catch(error){
+        console.log("No connect")
+    }
+}
+
+connectDB()
+
 app.get("/", (req, res) =>{
     res.send("Hello Cheese")
 })
@@ -26,7 +37,7 @@ app.get("/register", (req, res) =>{
     res.send("Hello Register API")
 })
 
-mongoose.connect(url)
+//mongoose.connect(url)
 
 
 app.post("/login", (req, res) =>{
