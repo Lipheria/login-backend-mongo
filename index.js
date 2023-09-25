@@ -57,9 +57,9 @@ app.post("/login", (req, res) =>{
     })
 })
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
     console.log("Register API")
-    userModel.create(req.body)
+    await userModel.create(req.body)
     .then(user => res.json(user))
     .catch(err => res.json(err))
 })
