@@ -58,29 +58,13 @@ app.post("/login", (req, res) =>{
 })
 
 
-app.post('/register', async (req, res) => {
-  try {
-    const { username, email, password } = req.body;
 
-    // Create a new user
-    const user = new User({ username, email, password });
-
-    // Save the user to the database
-    await user.save();
-
-    res.status(201).json({ message: 'User registered successfully' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'An error occurred while registering the user' });
-  }
-});
-
-//app.post("/register", async (req, res) => {
-  //  console.log("Register API")
-    //await userModel.create(req.body)
-    //.then(user => res.json(user))
-    //.catch(err => res.json(err))
-//})
+app.post("/register", async (req, res) => {
+  console.log("Register API")
+    await userModel.save(req.body)
+    .then(user => res.json(user))
+    .catch(err => res.json(err))
+})
 
 app.listen(3001, () => {
     console.log("server is running")
