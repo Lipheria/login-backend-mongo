@@ -7,5 +7,5 @@ const userSchema = new mongoose.Schema({
 })
 
 
-const userModel = mongoose.model("register", userSchema)
+const userModel = mongoose.model("registers", userSchema)
 module.exports = userModel
