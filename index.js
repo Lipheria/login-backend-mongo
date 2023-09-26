@@ -1,7 +1,7 @@
 const express = require("express")
 const mongoose = require('mongoose')
 const cors = require("cors")
-//const userModel = require("./models/user")
+const userModel = require("./models/user")
 const url = "mongodb+srv://lipheria:samurott@cluster0.bbpwnrj.mongodb.net/plantidb?retryWrites=true&w=majority"
 
 const app = express()
@@ -14,14 +14,6 @@ app.use(cors(
     }
 ))
 
-const userSchema = new mongoose.Schema({
-    email: String,
-    userName: String,
-    password: String
-})
-
-const userModel = mongoose.model("registers", userSchema)
-//module.exports = userModel
 
 const connectDB = async () =>{
     try{
@@ -68,9 +60,8 @@ app.post("/login", (req, res) =>{
 
 
 
-app.post("/register", async (req, res) => {
-  console.log("Register API")
-    await userModel.create(req.body)
+app.post("/register", (req, res) => {
+    userModel.create(req.body)
     .then(user => res.json(user))
     .catch(err => res.json(err))
 })
