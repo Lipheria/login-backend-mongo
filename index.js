@@ -61,7 +61,7 @@ app.post("/login", (req, res) =>{
 
 
 app.post("/register", (req, res) => {
-    userModel.insertOne(req.body)
+    userModel.create(req.body)
     .then(user => res.json(user))
     .catch(err => res.json(err))
 })
