@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(cors(
     {
-        origin: ["https://login-backend-mongo.vercel.app"],
+        origin: ["https://login-register-dashboard.vercel.app"],
         methods: ["POST", "GET"],
         crendentials: true
     }
