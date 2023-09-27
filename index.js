@@ -61,7 +61,8 @@ app.post("/login", (req, res) =>{
 
 
 app.post("/register", (req, res) => {
-    userModel.create(req.body)
+    const {email, userName, password} = req.body
+    userModel.create({email: email, userName: userName, password: password})
     .then(user => res.json(user))
     .catch(err => res.json(err))
 })
